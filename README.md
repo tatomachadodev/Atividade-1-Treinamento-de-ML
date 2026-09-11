@@ -73,8 +73,10 @@ O usuário preenche campos numéricos, listas de seleção e escalas de avaliaç
 
 ### Instalar dependências
 
+Na raiz do projeto, instale todas as dependências listadas em `requirements.txt`:
+
 ```bash
-pip install fastapi uvicorn pandas scikit-learn joblib
+pip install -r requirements.txt
 ```
 
 ### Iniciar a API
