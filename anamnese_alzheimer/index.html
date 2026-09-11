@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulário de avaliação de risco de Alzheimer">
+  <title>Anamnese Alzheimer | Avaliação de risco</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Página inicial">
+        <span class="brand-mark" aria-hidden="true">+</span>
+        <span>NeuroCare</span>
+      </a>
+      <span class="status"><span class="status-dot"></span> avaliação assistida</span>
+    </header>
+
+    <section class="intro" id="top">
+      <div>
+        <p class="eyebrow">Anamnese cognitiva</p>
+        <h1>Avaliação de risco<br><em>de Alzheimer</em></h1>
+        <p class="intro-copy">Preencha os dados abaixo para gerar uma estimativa baseada no modelo de machine learning.</p>
+      </div>
+      <div class="intro-note">
+        <span class="note-icon">i</span>
+        <p>Este resultado é uma triagem. Não substitui avaliação e diagnóstico médico.</p>
+      </div>
+    </section>
+
+    <form id="assessment-form" novalidate>
+      <section class="form-section">
+        <div class="section-heading"><span class="section-number">01</span><div><h2>Perfil do paciente</h2><p>Informações demográficas e histórico familiar.</p></div></div>
+        <div class="field-grid">
+          <label class="field"><span>Idade <small>60–90 anos</small> <b>*</b></span><input name="Age" type="number" min="60" max="90" step="1" value="73" required></label>
+          <label class="field"><span>Gênero <b>*</b></span><select name="Gender" required><option value="0">Masculino</option><option value="1">Feminino</option></select></label>
+          <label class="field"><span>Etnia <b>*</b></span><select name="Ethnicity" required><option value="0">Caucasiano</option><option value="1">Afro-americano</option><option value="2">Asiático</option><option value="3">Outra</option></select></label>
+          <label class="field"><span>Escolaridade <b>*</b></span><select name="EducationLevel" required><option value="0">Nenhuma</option><option value="1">Ensino médio</option><option value="2">Bacharelado</option><option value="3">Ensino superior</option></select></label>
+          <label class="field"><span>IMC <small>15–40</small> <b>*</b></span><input name="BMI" type="number" min="15" max="40" step="0.01" value="23.4" required></label>
+          <label class="field"><span>Tabagismo <b>*</b></span><select name="Smoking" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+          <label class="field"><span>Histórico familiar de Alzheimer <b>*</b></span><select name="FamilyHistoryAlzheimers" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-heading"><span class="section-number">02</span><div><h2>Hábitos e bem-estar</h2><p>Use uma escala de 0 a 10 quando indicado.</p></div></div>
+        <div class="field-grid">
+          <label class="field"><span>Consumo de álcool <small>0–20 unid./semana</small> <b>*</b></span><input name="AlcoholConsumption" type="number" min="0" max="20" step="0.1" value="2.3" required></label>
+          <div class="field scale-field"><span>Atividade física <small>1 pouco · 5 muito</small> <b>*</b></span><div class="scale-options" role="radiogroup" aria-label="Atividade física"><label class="scale-option"><input type="radio" name="PhysicalActivity" value="1" data-model-min="0" data-model-max="10" required><span>1</span><small>Muito pouca</small></label><label class="scale-option"><input type="radio" name="PhysicalActivity" value="2"><span>2</span><small>Pouca</small></label><label class="scale-option"><input type="radio" name="PhysicalActivity" value="3" checked><span>3</span><small>Moderada</small></label><label class="scale-option"><input type="radio" name="PhysicalActivity" value="4"><span>4</span><small>Alta</small></label><label class="scale-option"><input type="radio" name="PhysicalActivity" value="5"><span>5</span><small>Muito alta</small></label></div></div>
+          <div class="field scale-field"><span>Qualidade da dieta <small>1 ruim · 5 excelente</small> <b>*</b></span><div class="scale-options" role="radiogroup" aria-label="Qualidade da dieta"><label class="scale-option"><input type="radio" name="DietQuality" value="1" data-model-min="0" data-model-max="10" required><span>1</span><small>Muito ruim</small></label><label class="scale-option"><input type="radio" name="DietQuality" value="2"><span>2</span><small>Ruim</small></label><label class="scale-option"><input type="radio" name="DietQuality" value="3" checked><span>3</span><small>Regular</small></label><label class="scale-option"><input type="radio" name="DietQuality" value="4"><span>4</span><small>Boa</small></label><label class="scale-option"><input type="radio" name="DietQuality" value="5"><span>5</span><small>Excelente</small></label></div></div>
+          <div class="field scale-field"><span>Qualidade do sono <small>1 ruim · 5 excelente</small> <b>*</b></span><div class="scale-options" role="radiogroup" aria-label="Qualidade do sono"><label class="scale-option"><input type="radio" name="SleepQuality" value="1" data-model-min="4" data-model-max="10" required><span>1</span><small>Muito ruim</small></label><label class="scale-option"><input type="radio" name="SleepQuality" value="2"><span>2</span><small>Ruim</small></label><label class="scale-option"><input type="radio" name="SleepQuality" value="3" checked><span>3</span><small>Regular</small></label><label class="scale-option"><input type="radio" name="SleepQuality" value="4"><span>4</span><small>Boa</small></label><label class="scale-option"><input type="radio" name="SleepQuality" value="5"><span>5</span><small>Excelente</small></label></div></div>
+          <label class="field"><span>Doença cardiovascular <b>*</b></span><select name="CardiovascularDisease" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+          <label class="field"><span>Diabetes <b>*</b></span><select name="Diabetes" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+          <label class="field"><span>Depressão <b>*</b></span><select name="Depression" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+          <label class="field"><span>Lesão cerebral <b>*</b></span><select name="HeadInjury" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+          <label class="field"><span>Hipertensão <b>*</b></span><select name="Hypertension" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-heading"><span class="section-number">03</span><div><h2>Indicadores clínicos</h2><p>Pressão arterial e perfil metabólico.</p></div></div>
+        <div class="field-grid">
+          <label class="field"><span>Pressão sistólica <small>90–180 mmHg</small> <b>*</b></span><input name="SystolicBP" type="number" min="90" max="180" step="1" value="130" required></label>
+          <label class="field"><span>Pressão diastólica <small>60–120 mmHg</small> <b>*</b></span><input name="DiastolicBP" type="number" min="60" max="120" step="1" value="80" required></label>
+          <label class="field"><span>Colesterol total <small>150–300 mg/dL</small> <b>*</b></span><input name="CholesterolTotal" type="number" min="150" max="300" step="0.01" value="200" required></label>
+          <label class="field"><span>Colesterol LDL <small>50–200 mg/dL</small> <b>*</b></span><input name="CholesterolLDL" type="number" min="50" max="200" step="0.01" value="120" required></label>
+          <label class="field"><span>Colesterol HDL <small>20–100 mg/dL</small> <b>*</b></span><input name="CholesterolHDL" type="number" min="20" max="100" step="0.01" value="50" required></label>
+          <label class="field"><span>Triglicerídeos <small>50–400 mg/dL</small> <b>*</b></span><input name="CholesterolTriglycerides" type="number" min="50" max="400" step="0.01" value="150" required></label>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-heading"><span class="section-number">04</span><div><h2>Cognição e funcionalidade</h2><p>Responda considerando o estado atual do paciente.</p></div></div>
+        <div class="field-grid">
+          <label class="field"><span>Mini-Exame do Estado Mental (MMSE) <small>0–30 pontos · menor pontuação indica maior comprometimento</small> <b>*</b></span><input name="MMSE" type="number" min="0" max="30" step="0.01" value="21" required></label>
+          <div class="field scale-field"><span>Avaliação funcional <small>1 maior · 5 menor limitação</small> <b>*</b></span><div class="scale-options" role="radiogroup" aria-label="Avaliação funcional"><label class="scale-option"><input type="radio" name="FunctionalAssessment" value="1" data-model-min="0" data-model-max="10" required><span>1</span><small>Muito limitada</small></label><label class="scale-option"><input type="radio" name="FunctionalAssessment" value="2"><span>2</span><small>Limitada</small></label><label class="scale-option"><input type="radio" name="FunctionalAssessment" value="3" checked><span>3</span><small>Moderada</small></label><label class="scale-option"><input type="radio" name="FunctionalAssessment" value="4"><span>4</span><small>Boa</small></label><label class="scale-option"><input type="radio" name="FunctionalAssessment" value="5"><span>5</span><small>Muito boa</small></label></div></div>
+          <div class="field scale-field"><span>Atividades diárias (ADL) <small>1 pouca · 5 muita autonomia</small> <b>*</b></span><div class="scale-options" role="radiogroup" aria-label="Atividades diárias"><label class="scale-option"><input type="radio" name="ADL" value="1" data-model-min="0" data-model-max="10" required><span>1</span><small>Muito pouca</small></label><label class="scale-option"><input type="radio" name="ADL" value="2"><span>2</span><small>Pouca</small></label><label class="scale-option"><input type="radio" name="ADL" value="3" checked><span>3</span><small>Moderada</small></label><label class="scale-option"><input type="radio" name="ADL" value="4"><span>4</span><small>Boa</small></label><label class="scale-option"><input type="radio" name="ADL" value="5"><span>5</span><small>Muita</small></label></div></div>
+          <label class="field"><span>Queixas de memória <b>*</b></span><select name="MemoryComplaints" required><option value="0">Não</option><option value="1" selected>Sim</option></select></label>
+          <label class="field"><span>Problemas comportamentais <b>*</b></span><select name="BehavioralProblems" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+          <label class="field"><span>Confusão <b>*</b></span><select name="Confusion" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+          <label class="field"><span>Desorientação <b>*</b></span><select name="Disorientation" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+          <label class="field"><span>Alterações de personalidade <b>*</b></span><select name="PersonalityChanges" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+          <label class="field"><span>Dificuldade em tarefas <b>*</b></span><select name="DifficultyCompletingTasks" required><option value="0">Não</option><option value="1">Sim</option></select></label>
+          <label class="field"><span>Esquecimento <b>*</b></span><select name="Forgetfulness" required><option value="0">Não</option><option value="1" selected>Sim</option></select></label>
+        </div>
+      </section>
+
+      <div class="form-actions"><p><b>*</b> Todos os campos são obrigatórios</p><button id="submit-button" type="submit"><span>Analisar risco</span><span class="button-arrow" aria-hidden="true">↗</span></button></div>
+      <div id="error-message" class="message error" role="alert" hidden></div>
+    </form>
+
+    <section id="result" class="result-panel" aria-live="polite" hidden>
+      <div class="result-top"><div><p class="eyebrow">Resultado da triagem</p><h2 id="result-title">Risco identificado</h2></div><div id="risk-badge" class="risk-badge">BAIXO</div></div>
+      <div class="result-content"><div class="probability-wrap"><div class="probability" id="probability">0%</div><p>probabilidade estimada</p></div><div class="result-divider"></div><div class="recommendation"><span class="recommendation-label">Próximo passo</span><p id="recommendation"></p></div></div>
+      <button class="secondary-button" id="new-assessment" type="button">Nova avaliação <span aria-hidden="true">↗</span></button>
+    </section>
+    <footer>Ferramenta acadêmica de apoio à triagem · API de machine learning</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
