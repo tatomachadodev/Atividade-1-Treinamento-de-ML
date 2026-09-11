@@ -4,7 +4,7 @@ Aplicação acadêmica de triagem de risco de Alzheimer usando Machine Learning.
 
 ## 1. Dataset e problema
 
-O dataset escolhido é o `Alzheimer's Disease Dataset`, que reúne informações de pacientes relacionadas a aspectos demográficos, hábitos de vida, condições de saúde, indicadores clínicos e sinais cognitivos/comportamentais.
+O dataset escolhido é o [Alzheimer's Disease Dataset](https://www.kaggle.com/datasets/rabieelkharoua/alzheimers-disease-dataset), que reúne informações de pacientes relacionadas a aspectos demográficos, hábitos de vida, condições de saúde, indicadores clínicos e sinais cognitivos/comportamentais.
 
 O problema representado é uma **classificação binária**: estimar, a partir dessas informações, se o registro do paciente está associado ou não ao diagnóstico de Alzheimer (`Diagnosis`). O dataset possui 2.149 registros, sendo 1.389 da classe `0` e 760 da classe `1`.
 
